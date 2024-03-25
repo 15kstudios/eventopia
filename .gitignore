@@ -1,0 +1,17 @@
+# Ignore everything in the root directory except wp-config.php and .htaccess
+/*
+!.gitignore
+!wp-config.php
+!.htaccess
+
+# Ignore all directories except wp-content
+/*
+!wp-content/
+
+# Ignore everything in wp-content except themes
+/wp-content/*
+!/wp-content/themes/
+
+# Ignore specific files within wp-content/themes
+/wp-content/themes/*
+!/wp-content/themes/**/*.php
