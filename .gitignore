@@ -3,15 +3,13 @@
 !.gitignore
 !wp-config.php
 !.htaccess
+!less/
+!favicon.ico
 
 # Ignore all directories except wp-content
 /*
 !wp-content/
 
-# Ignore everything in wp-content except themes
+# Ignore everything in wp-content except child theme
 /wp-content/*
-!/wp-content/themes/
-
-# Ignore specific files within wp-content/themes
-/wp-content/themes/*
-!/wp-content/themes/**/*.php
+!/wp-content/themes/uncode-child
