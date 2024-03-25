@@ -1,0 +1,93 @@
+/* ==========================================================================
+   WOO
+   ========================================================================== */
+
+/* remove 'detailed info' tab */
+
+.wootabs { display: none; }
+
+/* fix add to cart button */
+
+div.product p.cart:not(.dynamic-button), div.product form.cart:not(.dynamic-button) { margin-bottom: 2.8em !important; margin-top: 2.5em !important; }
+
+/* remove excess padding on product pages when shop roll is beneath */
+
+.single-product { 
+  .main-container .row-container .double-bottom-padding { padding-bottom: 0!important; }
+}
+
+/* roll
+   ========================================================================== */
+
+/* fix padding on price */
+
+div.product .price-container { margin-top: 0px !important; }
+
+/* move price down in roll */
+
+.tmb-woocommerce.tmb .t-entry-inline-price .t-entry .price {
+  content: ""!important;
+  display: block!important;
+
+  &::before { 
+
+    display: none!important;
+
+  }
+
+}
+
+/* remove meta on single prod */
+
+.product_meta { display: none; }
+
+/* make bg white in shop roll */
+
+.t-entry-text-tc.single-block-padding.t-entry-inline-price { background-color: #fff; }
+
+/* fix line height */
+
+h4.t-entry-title.font-182565.h4.font-weight-500 { line-height: 1.55; }
+
+/* remove SKU wrapper */
+
+.sku_wrapper { display: none!important; }
+
+body > div.box-wrapper > div > div.main-wrapper > div > div > div > div > div > div > div > div > div > div.row-container > div > div.row-inner > div:nth-child(2) > div > div > div > div > form > select
+
+
+/* fix orderby on main shop page */
+
+select.orderby { border-bottom: 1px @col-theme-accent solid!important; }
+
+/* quantity input */
+
+.woocommerce .shop_table .quantity input[type="number"].qty, .woocommerce .quantity input[type="number"].qty {
+  padding: 19px;
+  background-color: #ececec!important;
+  border: 0!important;
+}
+
+.woocommerce .shop_table .quantity input.qty, .woocommerce .quantity input.qty {
+  font-size: 1em;
+  // font-weight: 700;
+}
+
+@media screen and (max-width: @breakpoint) {
+
+  .isotope-container {
+
+    /* remove if single item has no white space in image! */
+
+    .single-block-padding { padding: 0!important; }
+    
+    .tmb-woocommerce:last-of-type {
+
+      .t-entry-text { padding: 0 0 34px 0!important; }
+
+    }
+
+  }
+
+}
+

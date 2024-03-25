@@ -1,0 +1,337 @@
+/*!
+Theme Name: Eventopia
+Description: Child theme for Eventopia
+Author: 15kstudios.com
+Author URI: https://15kstudios.com
+Template: uncode
+Version: 1.4.0
+Text Domain: uncode
+*/
+
+@import url('_fonts.less');
+@import url('_woo.less');
+@import url('_cf7.less');
+
+/* ==========================================================================
+   variables
+   ========================================================================== */
+
+@breakpoint: 960px;
+@desktop: 1200px;
+@col-theme-accent: #FF675C;
+@col-theme-comp: #335780;
+@col-dark-stroke: #313131;
+@col-bgs: #303133;
+.dev() { border: 1px solid red; }
+
+/* ==========================================================================
+   mixins
+   ========================================================================== */
+
+.transition (@transition) {
+  transition: @transition;
+  transition: @transition; 
+  transition: @transition;  
+  transition: @transition;
+}
+
+/* ==========================================================================
+   general
+   ========================================================================== */
+
+* { .transition(100ms); }
+
+article { 
+
+  .uncode_text_column { 
+
+    a { text-decoration: underline; }
+
+  }
+
+}
+
+/* ==========================================================================
+   nav
+   ========================================================================== */
+
+.menu-wrapper.menu-hide-only.no-header { background-color: #fff; }
+
+/* nav on mobile safari */
+
+@media screen and (max-width: @breakpoint) {
+
+  .menu-wrapper.menu-sticky .menu-container, .menu-container .logo-container {
+
+    z-index: 10000!important;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+
+  }
+
+}
+
+@media(max-width:959px){
+  .open-overlay-menu .overlay.overlay-sequential.style-dark-bg.overlay-menu {
+    z-index:2000;
+  }
+}
+
+/* theme
+  .frontpage
+  .subpage
+   ========================================================================== */
+
+.theme { 
+
+  &--box { 
+
+    .wpb_column{ 
+
+      @media screen and (min-width: @breakpoint) {
+
+        min-height: 600px!important;
+
+      }
+
+    }
+
+  }
+
+  &--shoproll {
+
+    .btn { background-color: red!important; }
+
+  }
+
+  &--footer--bottom { 
+
+    .uncode_text_column { 
+
+      &> p { font-size: 14px!important; }
+      
+      a { 
+
+        text-decoration: underline!important;
+
+        &:hover { color: #fff; } 
+
+      }
+
+    }
+
+  }
+
+/* make menu sit on top of slider */
+
+body.menu-mobile-transparent:not(.hmenu-center) .menu-absolute.menu-transparent { z-index: 10000; }    
+
+/*  paragraphs in main article 
+      https://sandbox.15kstudios.com/eventopia/om-eventopia/
+     ========================================================================== */
+
+  &--paragraph { 
+
+    @media screen and (max-width: @breakpoint) {
+      .uncode_text_column { margin-top: 12px!important; }
+    }
+
+
+  }
+
+  &--formbutton { 
+
+    margin-top: 40px!important;
+
+  }
+
+}
+
+.placeholder() {
+  font-family: 'Open Sans' Arial, Helvetica, sans-serif;
+  color: #777!important;
+}
+
+input::placeholder { .placeholder(); }
+textarea::-webkit-input-placeholder { .placeholder(); }
+textarea:-moz-placeholder { /* Firefox 18- */ .placeholder(); }
+textarea::-moz-placeholder {  /* Firefox 19+ */ .placeholder(); }
+textarea:-ms-input-placeholder { .placeholder(); }
+textarea::placeholder { .placeholder(); }
+
+/* frontpage
+   ========================================================================== */
+
+/* hero
+   ========================================================================== */
+
+/* remove padding on hero */
+
+#page-header { 
+
+  .single-block-padding { padding: 0!important; }
+
+}
+
+.theme--ingress { 
+
+  @media screen and (max-width: @breakpoint) {
+
+    quad-bottom-padding { padding-bottom: 0px!important; }
+
+  }
+
+}
+
+/* subpage
+   ========================================================================== */
+
+.subpage { }
+
+/* footer
+   ========================================================================== */
+
+footer#colophon { 
+
+  .theme--footer--bottom .row-parent {
+      border-top: 1px @col-dark-stroke solid;
+  }
+
+  input { border-color: @col-dark-stroke; }
+
+}
+
+hr.separator-break.separator-accent { border-color: #303133 !important; }
+
+/* forms
+   ========================================================================== */
+
+/* slider customer logos 
+   ========================================================================== */
+
+.style-color-lxmt-bg { background-color: #fff; }
+
+/* ==========================================================================
+   footer
+   ========================================================================== */
+
+footer#colophon { 
+
+  /* fix footer headers */
+
+  .uncode_text_column { margin-top: 20px!important; }
+
+  @media screen and (max-width: @breakpoint) { 
+
+    .uncont { 
+
+      margin: 0 auto;
+      max-width: 500px!important;
+      text-align: center;
+
+    }
+
+  }
+
+}
+
+footer#colophon .theme--footer--bottom .row-parent { border-top: 0; }
+
+/* typo
+   ========================================================================== */
+
+/* custom blockquote / testimonials */
+
+blockquote { margin: 0; font-weight: 200; border-left: 4px solid; 
+
+  p { max-width: 700px!important;
+
+    @media screen and (max-width: @desktop) {
+
+      font-size: 16px!important;
+      // line-height: 1.65;
+
+    }
+
+  }
+
+}
+
+.color-accent-border, blockquote { border-color: @col-theme-accent; }
+
+/* links in lead for main shop page */
+
+.uncode_text_column a:not(footer a) { text-decoration: underline!important;
+
+  &:hover, &:visited, &:active { color: @col-bgs!important; }
+
+}
+
+/* custom margins */
+
+p, li, dt, dd, dl, address, label, small, pre, code { margin: 24px 0 0; }
+
+@media screen and (max-width: @breakpoint) { 
+  p, li, dt, dd, dl, address, label, small, pre, code { margin: 12px 0 0; }
+}
+
+@media screen and (min-width: @desktop) {
+  h1, h2 { font-size: 58px!important; }
+  p { font-size: 18px!important; }
+}
+
+@media screen and (max-width: @breakpoint) { 
+  h1, h2 { font-size: 32px!important; }
+}
+
+/* ==========================================================================
+   theme fixes
+   ========================================================================== */
+
+/* buttons */
+
+@media screen and (min-width: @desktop) { 
+
+  .main-container .row-container .row-parent .column_child.single-internal-gutter .uncont > *:not(:first-child) {
+      margin-top: 20px;
+  }
+
+  .uncode-accordion:not(.default-typography) .panel-title>a>span {
+    font-size: 16px!important;
+  }
+
+}
+
+
+/* margin above button in store roll */
+
+.tmb>.t-inside .spacer.half-space { margin-top: 24px; }
+
+/* remove fuckup on grid pages with products that float on top of text */
+
+.uncode_text_column { z-index: 10000; }
+
+/* forms */
+
+.style-light .ui-br, .style-dark .style-light .ui-br, .style-light hr, .style-dark .style-light hr, .style-light pre, .style-dark .style-light pre, .style-light table, .style-dark .style-light table, .style-light table td, .style-dark .style-light table td, .style-light table th, .style-dark .style-light table th, .style-light input, .style-dark .style-light input, .style-light textarea, .style-dark .style-light textarea, .style-light select, .style-dark .style-light select, .style-light .seldiv, .style-dark .style-light .seldiv, .style-light .select2-choice, .style-dark .style-light .select2-choice, .style-light .select2-selection--single, .style-dark .style-light .select2-selection--single, .style-light fieldset, .style-dark .style-light fieldset, .style-light .seldiv:before, .style-dark .style-light .seldiv:before, .style-light .tab-container .nav-tabs, .style-dark .style-light .tab-container .nav-tabs, .style-light .nav-tabs > li.active > a, .style-dark .style-light .nav-tabs > li.active > a, .style-light .border-100 .tab-content::before, .style-dark .style-light .border-100 .tab-content::before, .style-light .vertical-tab-menu .nav-tabs, .style-dark .style-light .vertical-tab-menu .nav-tabs, .style-light .tab-content.vertical, .style-dark .style-light .tab-content.vertical, .style-light .panel, .style-dark .style-light .panel, .style-light .panel-group .panel-heading + .panel-collapse .panel-body, .style-dark .style-light .panel-group .panel-heading + .panel-collapse .panel-body, .style-light .divider:before, .style-dark .style-light .divider:before, .style-light .divider:after, .style-dark .style-light .divider:after, .style-light .plan, .style-dark .style-light .plan, .style-light .plan .plan-title, .style-dark .style-light .plan .plan-title, .style-light .plan .item-list > li, .style-dark .style-light .plan .item-list > li, .style-light .plan .plan-button, .style-dark .style-light .plan .plan-button, .style-light .uncode-single-media-wrapper.img-thumbnail:not(.single-advanced), .style-dark .style-light .uncode-single-media-wrapper.img-thumbnail:not(.single-advanced), .style-light .post-share, .style-dark .style-light .post-share, .style-light .post-tag-share-container, .style-dark .style-light .post-tag-share-container, .style-light .widget-container .widget-title, .style-dark .style-light .widget-container .widget-title, .style-light .widget-container .tagcloud a, .style-dark .style-light .widget-container .tagcloud a, .style-light .widget-container.widget_calendar #wp-calendar caption, .style-dark .style-light .widget-container.widget_calendar #wp-calendar caption, .style-light .widget-container.widget_calendar .wp-calendar-nav, .style-dark .style-light .widget-container.widget_calendar .wp-calendar-nav, .style-light .widget-collapse-content:after, .style-dark .style-light .widget-collapse-content:after, .style-light #comments .comment-list .comments-list:first-child, .style-dark .style-light #comments .comment-list .comments-list:first-child, .style-light #respond .comment-list .comments-list:first-child, .style-dark .style-light #respond .comment-list .comments-list:first-child, .style-light #comments .comments-list .comment-content, .style-dark .style-light #comments .comments-list .comment-content, .style-light #respond .comments-list .comment-content, .style-dark .style-light #respond .comments-list .comment-content, .style-light .author-details, .style-dark .style-light .author-details, .style-light ul.dwls_search_results, .style-dark .style-light ul.dwls_search_results, .style-light ul.dwls_search_results li, .style-dark .style-light ul.dwls_search_results li { border-color: #bfbfbf; }
+
+@media screen and (max-width: @breakpoint) { 
+
+  .main-container .row-container .quad-bottom-padding, .main-container .row-container .double-bottom-padding { padding-bottom: 52px!important; }
+  .main-container .row-container .quad-top-padding, .main-container .row-container .double-top-padding { padding-top: 52px!important; }
+  .row-breadcrumb { display: none; }
+
+}
+
+/* ==========================================================================
+   buttons
+   ========================================================================== */
+
+.btn, .btn-link { font-size: 18px; }
+
+/* ==========================================================================
+   helpers
+   ========================================================================== */
+
+::selection { background: #EAEAEA; color: #777 !important; }
+.empty-space { display: none!important; }

@@ -1,0 +1,429 @@
+  /*!
+Theme Name: Eventopia
+Description: Child theme for Eventopia
+Author: 15kstudios.com
+Author URI: https://15kstudios.com
+Template: uncode
+Version: 2.2.2 250324
+Text Domain: uncode
+*/
+
+@import url('_fonts.less');
+@import url('_cf7.less');
+
+/* ==========================================================================
+   INFO
+   Icons from flaticons.com
+   Article max col with: 880px;
+   Heading boxes (title + lead) should have padding: 1,2,4
+   IMage online min-height: 480px;
+
+   HERO 
+   ARTICLE
+   ICONS
+   QUOTEBOX
+   CONTENT BLOCK
+   THEME CORRECTIONS
+   TYPO
+   FOOTER
+
+   ========================================================================== */
+
+/* ==========================================================================
+   variables
+   ========================================================================== */
+
+@breakpoint: 960px;
+@desktop: 1200px;
+@col-theme-accent: #FF675C;
+@col-theme-comp: #335780;
+@col-dark-stroke: #313131;
+@col-bgs: #303133;
+@theme-inline-indent: 20px;
+@theme-inline-popwidth: 6px;
+.dev() { border: 1px solid red; }
+* { transition: .2s; }
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+/* frontpage
+   ========================================================================== */
+
+.theme {
+  
+  &--header-payoff { max-width: 800px; }
+
+  @media screen and (max-width: @breakpoint) {
+
+    &--header-payoff { padding-bottom: 40px!important; }
+
+  }
+
+  &--villkor { 
+
+    margin-top: 20px!important;
+
+  }
+
+}
+
+/* ==========================================================================
+   ARTICLE
+   ========================================================================== */
+
+/* underline links in main content
+   ========================================================================== */
+
+article { 
+
+  .uncode_text_column { 
+
+    a { text-decoration: underline; }
+
+  }
+
+}
+
+/* ==========================================================================
+   ICONS
+   ========================================================================== */
+
+.theme--icon { 
+
+  max-width: 200px!important;
+  margin: 0 auto;
+
+  @media screen and (max-width: @breakpoint) {
+
+    max-width: 120px!important;
+
+  }
+
+}
+
+// .placeholder() {
+//   font-family: 'Open Sans' Arial, Helvetica, sans-serif;
+//   color: #777!important;
+// }
+
+// input::placeholder { .placeholder(); }
+// textarea::-webkit-input-placeholder { .placeholder(); }
+// textarea:-moz-placeholder { /* Firefox 18- */ .placeholder(); }
+// textarea::-moz-placeholder {  /* Firefox 19+ */ .placeholder(); }
+// textarea:-ms-input-placeholder { .placeholder(); }
+// textarea::placeholder { .placeholder(); }
+
+/* ==========================================================================
+   QUOTEBOX
+   ========================================================================== */
+
+.theme {
+
+  &--box {
+
+    margin: 0;
+    padding: 0;
+
+  }
+
+}
+
+/* ==========================================================================
+   CONTENT BLOCK
+   ========================================================================== */
+
+.theme {
+
+  /* cta with all rental icons */
+
+  &--ctaicons {
+
+    span.btn-container {
+      
+      margin-top: 24px!important;
+
+    }
+
+    /* margin above icons on desktop */
+
+    @media screen and (min-width: @breakpoint) {
+
+      margin-top: 70px!important;
+
+      span.btn-container {
+        
+        margin-top: 36px!important;
+
+      }
+
+    }
+
+  }
+
+}
+
+@media screen and (max-width: @breakpoint) {
+
+  .vc_row.theme--ctaicons.row-internal.row-container { margin-top: 28px!important; }
+
+}
+
+/* ==========================================================================
+   THEME CORRECTIONS
+   ========================================================================== */
+
+/* set a proper margin between heading and paragraph
+   ========================================================================== */
+
+.uncode_text_column { margin-top: 10px!important; }
+
+/* because of icons in top of every page remove top padding */
+
+body.page-template-default { 
+
+  .main-container .row-container .single-top-padding { padding-top: 0!important; }
+}
+
+/* paddings
+   ========================================================================== */
+
+ @media screen and (max-width: @breakpoint) {
+
+  .quad-block-padding { padding: 36px!important; }
+  .quad-top-padding { padding: 36px!important; }
+  .quad-bottom-padding { padding: 36px!important; }
+  .single-h-padding { padding: 52px!important; }
+  .single-top-padding { padding: 36px!important; }
+
+ }
+
+/* ==========================================================================
+   TYPO
+   ========================================================================== */
+
+/* fix heading vs icon on mobile */
+
+@media screen and (max-width: @breakpoint) {
+
+  .vc_custom_heading_wrap { margin-top: 22px!important; }
+
+  p, a, li { line-height: 1.55; }
+
+  h1:not([class*="fontsize-"]), .h1:not([class*="fontsize-"]) {
+      font-size: 30px;
+  }
+
+  /* for main titles */
+
+  h3:not([class*="fontsize-"]), .h3:not([class*="fontsize-"]) {
+      font-size: 26px!important;
+  }
+
+  .pop {
+
+    h3:not([class*="fontsize-"]), .h3:not([class*="fontsize-"]) {
+        font-size: 16px!important;
+    }
+
+  }
+
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+footer#colophon { 
+
+  p, a {
+
+    font-weight: 300!important;
+    line-height: 1.60;
+    margin: 18px 0px 0px 0px;
+    font-size: 14px!important;
+
+    @media screen and (max-width: @breakpoint) {
+
+      margin: 10px 0px 0px 0px;
+
+    }
+
+  }
+
+  // .single-h-padding { padding: 52px!important; }
+
+}
+
+/* footer cols */
+
+.theme {
+
+  &--footercolumn {
+
+    max-width: 400px!important;
+    margin: 0 auto!important;
+
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .main-container .row-container .triple-h-padding {
+      padding-left: 72px!important;
+      padding-right: 72px!important;
+  }
+
+  /* set lead to left align */
+
+}
+
+/* fonts
+   ========================================================================== */
+
+blockquote {
+
+  margin: 27px 0px 0px 0px;
+
+  p { 
+
+    @media screen and (max-width: @breakpoint) {
+      
+      font-size: 16px!important;
+
+    }
+
+  }
+
+}
+
+/* ==========================================================================
+   helpers
+   ========================================================================== */
+
+::selection { background: #EAEAEA; color: #777 !important; }
+.empty-space { display: none!important; }
+
+/* problems
+   ========================================================================== */
+
+/* remove empty p */
+
+p:empty :not(p + p:empty){
+   display: none!important;
+}
+
+/* hide
+   ========================================================================== */
+
+@media screen and (max-width: @breakpoint) {
+
+  .hide--mobile { display: none!important; }
+
+}
+
+/* ==========================================================================
+   test
+   ========================================================================== */
+
+.mix-pop() {  
+
+  padding-left: @theme-inline-indent;
+  margin: @theme-inline-indent 0;
+  padding: @theme-inline-indent @theme-inline-indent + 6;
+
+  // &:first-of-type { background-color: red; }
+
+  &:last-of-type { margin-bottom: 0!important; }
+
+  h1, h2, h3, p { margin: 0!important; }
+
+}
+
+/* PRODUCT LIST
+   ========================================================================== */
+
+@co-pop-grey: #efefef;
+
+.pop { 
+
+  .mix-pop();
+
+  border-left: @theme-inline-popwidth solid darken(@co-pop-grey, 10);
+  background-color: @co-pop-grey;
+
+  &:hover, &:visited, &:active, &:link {
+  
+    border-left: @theme-inline-popwidth solid darken(@co-pop-grey, 20)!important;
+    color: initial;
+    
+    padding-left: 30px;
+
+  }
+
+  /* first item */
+
+  &.first {
+
+    &:before { 
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      border-width: 0 30px 30px 0;
+      border-style: solid;
+      border-color: darken(@co-pop-grey, 10) #fff;
+      display: block;
+      width: 0;
+
+      @media screen and (max-width: @breakpoint) {
+
+        border-width: 0 15px 15px 0;
+
+      }
+
+    }
+
+  }
+
+  h3 { padding-top: 6px; }
+
+  @media screen and (max-width: @breakpoint) {
+
+    padding: 15px!important;
+    margin: 15px 0!important;
+
+    h3 { font-size: 20px; }
+
+  }
+
+}
+
+.subcat--roll { margin-top: 34px!important; }
+
+/* ==========================================================================
+   MEDIA Q
+   ========================================================================== */
+
+@media screen and (max-width: @breakpoint) {
+
+  .quad-block-padding { padding: 0px!important; }
+  blockquote { padding: 0px 0px 0px 32px!important; }
+
+}
+
+/* ==========================================================================
+   REMOVE INSTA PLUGIN
+   ========================================================================== */
+
+#sb_instagram .sb_instagram_header, .sb_instagram_header, #sb_instagram #sbi_load { display: none!important; }
+
+/* ==========================================================================
+   PAYOFF (underkategorier)
+   ========================================================================== */
+
+
+
+#section--products > div > div > div > div > div > div > div > div.vc_row.row-internal.row-container { margin-top: 0!important; }
