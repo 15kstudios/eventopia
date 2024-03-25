@@ -1,15 +1,16 @@
-# Ignore everything in the root directory except wp-config.php and .htaccess
+# Ignore everything in the root directory
 /*
+
+# But do not ignore these specific files and directories
 !.gitignore
 !wp-config.php
 !.htaccess
 !less/
 !favicon.ico
-
-# Ignore all directories except wp-content
-/*
 !wp-content/
 
-# Ignore everything in wp-content except child theme
-/wp-content/*
-!/wp-content/themes/uncode-child
+# Inside wp-content, ignore everything
+wp-content/*
+
+# Except the uncode-child theme directory
+!wp-content/themes/uncode-child/
